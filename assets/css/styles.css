@@ -5,6 +5,13 @@
 :root {
   --header-height: 3rem;
 
+  --green: #16a085;
+  --black: #444;
+  --light-color: #777;
+  --box-shadow: 0.5rem 0.5rem 0 rgba(22, 160, 133, 0.2);
+  --text-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.2);
+  --border: 0.2rem solid var(--green);
+
   /*========== Colors ==========*/
   --first-color: #069c54;
   --first-color-alt: #048654;
@@ -285,17 +292,36 @@ img {
 }
 
 /*========== BUTTONS ==========*/
-.button {
-  display: inline-block;
-  background-color: var(--first-color);
-  color: #fff;
-  padding: 0.75rem 1rem;
+.btn {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  border: var(--border);
   border-radius: 0.5rem;
-  transition: 0.3s;
+  display: inline-block;
+  box-shadow: var(--box-shadow);
+  color: var(--green);
+  cursor: pointer;
+  font-size: 1.7rem;
+  background: #fff;
+}
+.btn span {
+  padding: 0.7rem 1rem;
+  border-radius: 0.5rem;
+  background: var(--green);
+  color: #fff;
+  margin-left: 0.5rem;
 }
 
-.button:hover {
-  background-color: var(--first-color-alt);
+.btn:hover {
+  background: var(--green);
+  color: #fff;
+}
+
+.btn:hover span {
+  color: var(--green);
+  background: #fff;
+  margin-left: 1rem;
 }
 
 /*========== ABOUT ==========*/
@@ -449,6 +475,7 @@ img {
 
 .footer__social:hover {
   color: #048654;
+  transform: scale(-180deg);
 }
 
 .footer__title {
@@ -465,14 +492,22 @@ img {
 }
 
 .footer__link:hover {
+  transform: scale(1.2);
+}
+
+.footer__link:hover {
   color: var(--first-color);
 }
 
 .footer__copy {
   text-align: center;
-  font-size: var(--small-font-size);
+  font-size: 1.4rem;
   color: var(--text-color-light);
   margin-top: 3.5rem;
+}
+
+.footer__copy span a {
+  color: #048654;
 }
 
 /*========== MEDIA QUERIES ==========*/
@@ -550,9 +585,11 @@ img {
     grid-template-columns: repeat(3, 210px);
     column-gap: 4rem;
   }
+
   .menu__content {
     padding: 1.5rem;
   }
+
   .menu__img {
     width: 130px;
   }
